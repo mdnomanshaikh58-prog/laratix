@@ -11,6 +11,7 @@ import {
   FileText,
   Calendar,
 } from 'lucide-react';
+import { agencyContactLinks } from '@/data/contact';
 
 interface Order {
   id: string;
@@ -266,12 +267,12 @@ export default function Dashboard() {
                         >
                           View Service
                         </Link>
-                        <Link
-                          to="/contact"
+                        <a
+                          href={agencyContactLinks.email}
                           className="px-4 py-2 bg-[#0CB35D] text-white rounded-lg text-sm font-medium hover:bg-[#0a9d4f] transition-colors"
                         >
                           Contact Support
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -299,8 +300,8 @@ export default function Dashboard() {
             </p>
           </Link>
 
-          <Link
-            to="/contact"
+          <a
+            href={agencyContactLinks.email}
             className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
           >
             <User className="w-10 h-10 text-gray-600 mb-4" />
@@ -308,7 +309,7 @@ export default function Dashboard() {
             <p className="text-gray-600 text-sm">
               Contact our team for help with your projects
             </p>
-          </Link>
+          </a>
 
           <Link
             to="/portfolio"

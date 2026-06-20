@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Menu, Search, User, X } from 'lucide-react';
+import { Mail, Menu, MessageCircle, Phone, Search, User, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { agencyContact, agencyContactLinks } from '@/data/contact';
 
 export default function RootLayout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -163,17 +164,18 @@ export default function RootLayout() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Company Info */}
             <div className="md:col-span-2">
               <h3 className="text-2xl font-bold mb-4">
                 Laratix <span className="text-[#0CB35D]">Lab</span>
               </h3>
               <p className="text-gray-400 mb-4">
-                Transforming data into research-grade insights and business decisions.
+                Websites, business solutions, and academic support built with
+                clarity.
               </p>
               <p className="text-gray-400 text-sm">
-                © 2026 Laratix Lab. All rights reserved.
+                (c) 2026 Laratix Lab. All rights reserved.
               </p>
             </div>
 
@@ -198,10 +200,46 @@ export default function RootLayout() {
             <div>
               <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>Research Analytics</li>
-                <li>Financial Analysis</li>
+                <li>Web Development</li>
                 <li>Business Insights</li>
-                <li>Data Cleaning</li>
+                <li>Academic Support</li>
+                <li>Data Analysis</li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <a
+                    href={agencyContactLinks.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-gray-400 transition-colors hover:text-[#0CB35D]"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>WhatsApp</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={agencyContactLinks.phone}
+                    className="flex items-center gap-2 text-gray-400 transition-colors hover:text-[#0CB35D]"
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span>{agencyContact.phoneDisplay}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={agencyContactLinks.email}
+                    className="flex items-center gap-2 text-gray-400 transition-colors hover:text-[#0CB35D]"
+                  >
+                    <Mail className="h-4 w-4" />
+                    <span>{agencyContact.email}</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -209,12 +247,14 @@ export default function RootLayout() {
       </footer>
 
       {/* Sticky CTA Button */}
-      <Link
-        to="/contact"
+      <a
+        href={agencyContactLinks.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-[#0CB35D] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#0a9d4f] transition-all hover:scale-105 z-40 font-medium text-sm"
       >
-        Start Your Project
-      </Link>
+        WhatsApp Us
+      </a>
     </div>
   );
 }

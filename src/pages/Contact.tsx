@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { Mail, MessageCircle, Send } from 'lucide-react';
+import { Mail, MessageCircle, Phone, Send } from 'lucide-react';
+import {
+  agencyContact,
+  agencyContactLinks,
+  createAgencyMailto,
+} from '@/data/contact';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,8 +19,21 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would send data to a backend
-    console.log('Form submitted:', formData);
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Project Type: ${formData.projectType}`,
+      `Deadline: ${formData.deadline || 'Not specified'}`,
+      '',
+      'Project Description:',
+      formData.description,
+    ].join('\n');
+
+    window.location.href = createAgencyMailto(
+      `Project inquiry from ${formData.name}`,
+      body,
+    );
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -39,9 +57,6 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     });
   };
-
-  const whatsappNumber = '+1234567890'; // Replace with actual WhatsApp number
-  const email = 'hello@laratixlab.com'; // Replace with actual email
 
   return (
     <div>
@@ -76,7 +91,7 @@ export default function Contact() {
               {/* Contact Cards */}
               <div className="space-y-4 mb-8">
                 <a
-                  href={`https://wa.me/${whatsappNumber}`}
+                  href={agencyContactLinks.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-white border-2 border-[#0CB35D] rounded-xl p-6 hover:bg-[#0CB35D]/5 transition-colors group"
@@ -89,13 +104,28 @@ export default function Contact() {
                       WhatsApp (Fastest)
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Quick response for urgent inquiries
+                      {agencyContact.phoneDisplay}
                     </p>
                   </div>
                 </a>
 
                 <a
-                  href={`mailto:${email}`}
+                  href={agencyContactLinks.phone}
+                  className="flex items-center gap-4 bg-white border border-gray-200 rounded-xl p-6 hover:border-[#0CB35D] hover:bg-gray-50 transition-colors group"
+                >
+                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 group-hover:bg-[#0CB35D] group-hover:text-white transition-colors">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
+                    <p className="text-sm text-gray-600">
+                      {agencyContact.phoneDisplay}
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href={agencyContactLinks.email}
                   className="flex items-center gap-4 bg-white border border-gray-200 rounded-xl p-6 hover:border-[#0CB35D] hover:bg-gray-50 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 group-hover:bg-[#0CB35D] group-hover:text-white transition-colors">
@@ -103,7 +133,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-sm text-gray-600">{email}</p>
+                    <p className="text-sm text-gray-600">
+                      {agencyContact.email}
+                    </p>
                   </div>
                 </a>
               </div>
@@ -158,6 +190,7 @@ export default function Contact() {
                       Message Sent Successfully!
                     </h4>
                     <p className="text-sm text-gray-600">
+                      Your email app should open with your project details.
                       We'll get back to you within 24 hours.
                     </p>
                   </div>
@@ -280,7 +313,7 @@ export default function Contact() {
                         onChange={handleChange}
                         rows={5}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0CB35D] focus:border-transparent outline-none transition-all resize-none"
-                        placeholder="Tell us about your project: data type, analysis needed, expected deliverables, etc."
+                        placeholder="Tell us about your project, goals, current needs, expected deliverables, and any important details."
                       />
                     </div>
 
@@ -312,8 +345,8 @@ export default function Contact() {
                 What should I include in my message?
               </h3>
               <p className="text-sm text-gray-600">
-                Brief project description, type of analysis needed, sample size,
-                deadline, and any specific requirements.
+                Brief project description, service type, deadline, reference
+                links or files, and any specific requirements.
               </p>
             </div>
             <div className="bg-white rounded-xl p-6">
