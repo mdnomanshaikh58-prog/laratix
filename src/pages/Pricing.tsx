@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ImageWithFallback } from '@/components/common/ImageWithFallback';
+import { CustomQuoteCard } from '@/components/common/CustomQuoteCard';
 import { servicesData } from '@/data/services';
 import { Check } from 'lucide-react';
 
@@ -56,7 +57,7 @@ export default function Pricing() {
                     <div className="border-t border-gray-200 pt-4 mt-4">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-sm text-gray-600">Starting from</span>
-                        <span className="text-2xl font-bold text-[#0CB35D]">
+                        <span className="text-right text-lg font-bold leading-tight text-[#0CB35D]">
                           {service.pricing.basic.price}
                         </span>
                       </div>
@@ -88,6 +89,7 @@ export default function Pricing() {
                 </Link>
               );
             })}
+            <CustomQuoteCard />
           </div>
         </div>
       </section>

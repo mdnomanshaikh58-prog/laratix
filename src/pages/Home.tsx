@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BarChart3, CheckCircle, Users, Zap } from 'lucide-react';
 import { ImageWithFallback } from '@/components/common/ImageWithFallback';
+import { CustomQuoteCard } from '@/components/common/CustomQuoteCard';
 import { serviceCategoryContent, servicesData } from '@/data/services';
 
 export default function Home() {
@@ -141,6 +142,7 @@ export default function Home() {
                 </Link>
               );
             })}
+            <CustomQuoteCard />
           </div>
         </div>
       </section>

@@ -274,7 +274,7 @@ export default function Services() {
                               <p className="text-xs font-semibold text-gray-500">
                                 Starting from
                               </p>
-                              <p className="mt-1 text-2xl font-bold text-[#0CB35D]">
+                              <p className="mt-1 text-lg font-bold leading-tight text-[#0CB35D]">
                                 {service.pricing.basic.price}
                               </p>
                             </div>

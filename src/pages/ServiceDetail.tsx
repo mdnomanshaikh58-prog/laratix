@@ -139,7 +139,7 @@ export default function ServiceDetail() {
                   Essential features to get started
                 </p>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold leading-tight text-gray-900">
                     {service.pricing.basic.price}
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function ServiceDetail() {
                   Perfect for most projects
                 </p>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold leading-tight text-gray-900">
                     {service.pricing.standard.price}
                   </span>
                 </div>
@@ -234,7 +234,7 @@ export default function ServiceDetail() {
                   Complete advanced solution
                 </p>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
+                  <span className="text-3xl font-bold leading-tight text-gray-900">
                     {service.pricing.premium.price}
                   </span>
                 </div>

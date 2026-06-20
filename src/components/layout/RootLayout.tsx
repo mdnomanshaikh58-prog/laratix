@@ -154,6 +154,13 @@ export default function RootLayout() {
             </div>
           )}
         </nav>
+        <div className="overflow-hidden border-t border-[#0CB35D]/20 bg-gray-900 py-2 text-white">
+          <div className="payment-notice-marquee whitespace-nowrap text-sm font-medium">
+            The built-in automatic payment system is currently unavailable while
+            the website is under construction. For payments, project quotes, and
+            other inquiries, please contact us directly.
+          </div>
+        </div>
       </header>
 
       {/* Main Content */}

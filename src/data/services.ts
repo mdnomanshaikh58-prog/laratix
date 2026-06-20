@@ -46,6 +46,17 @@ export interface ServiceData {
   };
 }
 
+const BDT_PER_USD = 125;
+
+const formatDualCurrencyPrice = (usdAmount: number, hasPlus = false) => {
+  const bdtAmount = new Intl.NumberFormat('en-US').format(
+    usdAmount * BDT_PER_USD,
+  );
+  const suffix = hasPlus ? '+' : '';
+
+  return `$${usdAmount}${suffix} / ৳${bdtAmount}${suffix} BDT`;
+};
+
 export const serviceCategoryContent: Record<
   ServiceCategory,
   {
@@ -99,7 +110,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Startups, agencies, coaches, service businesses',
     pricing: {
       basic: {
-        price: '$120',
+        price: formatDualCurrencyPrice(120),
         features: [
           'Single-page landing site',
           'Responsive design',
@@ -110,7 +121,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '3-5 days',
       },
       standard: {
-        price: '$220',
+        price: formatDualCurrencyPrice(220),
         features: [
           'Everything in Basic',
           'Custom animations',
@@ -121,7 +132,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '5-7 days',
       },
       premium: {
-        price: '$380+',
+        price: formatDualCurrencyPrice(380, true),
         features: [
           'Everything in Standard',
           'Multi-variant page sections',
@@ -161,7 +172,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Agencies, small businesses, personal brands',
     pricing: {
       basic: {
-        price: '$180',
+        price: formatDualCurrencyPrice(180),
         features: [
           'Up to 4 pages',
           'Responsive development',
@@ -172,7 +183,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '5-7 days',
       },
       standard: {
-        price: '$320',
+        price: formatDualCurrencyPrice(320),
         features: [
           'Everything in Basic',
           'Up to 7 pages',
@@ -183,7 +194,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '7-10 days',
       },
       premium: {
-        price: '$500+',
+        price: formatDualCurrencyPrice(500, true),
         features: [
           'Everything in Standard',
           'Expanded page architecture',
@@ -223,7 +234,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Product brands, online sellers, DTC startups',
     pricing: {
       basic: {
-        price: '$220',
+        price: formatDualCurrencyPrice(220),
         features: [
           'Core storefront pages',
           'Responsive product layouts',
@@ -234,7 +245,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '6-8 days',
       },
       standard: {
-        price: '$380',
+        price: formatDualCurrencyPrice(380),
         features: [
           'Everything in Basic',
           'Enhanced product browsing',
@@ -245,7 +256,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '8-12 days',
       },
       premium: {
-        price: '$650+',
+        price: formatDualCurrencyPrice(650, true),
         features: [
           'Everything in Standard',
           'Advanced storefront polish',
@@ -285,7 +296,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'SaaS founders, startups, internal operations teams',
     pricing: {
       basic: {
-        price: '$200',
+        price: formatDualCurrencyPrice(200),
         features: [
           'Core dashboard interface',
           'Up to 3 main screens',
@@ -296,7 +307,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '5-7 days',
       },
       standard: {
-        price: '$360',
+        price: formatDualCurrencyPrice(360),
         features: [
           'Everything in Basic',
           'Additional workflow screens',
@@ -307,7 +318,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '8-10 days',
       },
       premium: {
-        price: '$580+',
+        price: formatDualCurrencyPrice(580, true),
         features: [
           'Everything in Standard',
           'Complex dashboard structure',
@@ -347,7 +358,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Finance students, analysts, research projects',
     pricing: {
       basic: {
-        price: '$100',
+        price: formatDualCurrencyPrice(100),
         features: [
           'Basic financial ratios',
           'Descriptive analysis',
@@ -358,7 +369,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '3-5 days',
       },
       standard: {
-        price: '$180',
+        price: formatDualCurrencyPrice(180),
         features: [
           'Everything in Basic',
           'ROA, ROE, NIM analysis',
@@ -369,7 +380,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '6-8 days',
       },
       premium: {
-        price: '$300+',
+        price: formatDualCurrencyPrice(300, true),
         features: [
           'Everything in Standard',
           'Panel data regression',
@@ -409,7 +420,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Small businesses, startups, entrepreneurs',
     pricing: {
       basic: {
-        price: '$100',
+        price: formatDualCurrencyPrice(100),
         features: [
           'Basic data cleaning',
           'Simple Excel dashboard',
@@ -420,7 +431,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '4-5 days',
       },
       standard: {
-        price: '$200',
+        price: formatDualCurrencyPrice(200),
         features: [
           'Everything in Basic',
           'Interactive Power BI dashboard',
@@ -431,7 +442,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '7-10 days',
       },
       premium: {
-        price: '$350+',
+        price: formatDualCurrencyPrice(350, true),
         features: [
           'Everything in Standard',
           'Custom dashboard design',
@@ -471,7 +482,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'All researchers and business clients',
     pricing: {
       basic: {
-        price: '$30',
+        price: formatDualCurrencyPrice(30),
         features: [
           'Basic cleaning',
           'Missing value treatment',
@@ -482,7 +493,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '1-2 days',
       },
       standard: {
-        price: '$60',
+        price: formatDualCurrencyPrice(60),
         features: [
           'Everything in Basic',
           'Advanced outlier handling',
@@ -493,7 +504,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '2-3 days',
       },
       premium: {
-        price: '$100+',
+        price: formatDualCurrencyPrice(100, true),
         features: [
           'Everything in Standard',
           'Advanced imputation',
@@ -533,7 +544,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Anyone needing guidance before starting',
     pricing: {
       basic: {
-        price: '$50',
+        price: formatDualCurrencyPrice(50),
         features: [
           '1 hour consultation',
           'Problem scoping',
@@ -544,7 +555,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: 'Same day',
       },
       standard: {
-        price: '$90',
+        price: formatDualCurrencyPrice(90),
         features: [
           '2 hour consultation',
           'Research design review',
@@ -555,7 +566,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '1-2 days',
       },
       premium: {
-        price: '$150+',
+        price: formatDualCurrencyPrice(150, true),
         features: [
           'Multiple consultation sessions',
           'Complete project planning',
@@ -595,7 +606,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Thesis students, MBA/BBA, researchers',
     pricing: {
       basic: {
-        price: '$80',
+        price: formatDualCurrencyPrice(80),
         features: [
           'Descriptive statistics',
           'Basic correlation analysis',
@@ -606,7 +617,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '3-4 days',
       },
       standard: {
-        price: '$150',
+        price: formatDualCurrencyPrice(150),
         features: [
           'Everything in Basic',
           'Multiple regression',
@@ -617,7 +628,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '5-7 days',
       },
       premium: {
-        price: '$250+',
+        price: formatDualCurrencyPrice(250, true),
         features: [
           'Everything in Standard',
           'SEM / CFA analysis',
@@ -659,7 +670,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Final-year students, thesis clients',
     pricing: {
       basic: {
-        price: '$200',
+        price: formatDualCurrencyPrice(200),
         features: [
           'Proposal guidance',
           'Data analysis support',
@@ -670,7 +681,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '7-10 days',
       },
       standard: {
-        price: '$400',
+        price: formatDualCurrencyPrice(400),
         features: [
           'Everything in Basic',
           'Literature review help',
@@ -681,7 +692,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '14-20 days',
       },
       premium: {
-        price: '$600+',
+        price: formatDualCurrencyPrice(600, true),
         features: [
           'Everything in Standard',
           'End-to-end project support',
@@ -721,7 +732,7 @@ export const servicesData: ServiceData[] = [
     targetClient: 'Thesis students, postgraduate researchers, dissertation writers',
     pricing: {
       basic: {
-        price: '$70',
+        price: formatDualCurrencyPrice(70),
         features: [
           'Basic result interpretation',
           'Table explanation support',
@@ -732,7 +743,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '2-3 days',
       },
       standard: {
-        price: '$130',
+        price: formatDualCurrencyPrice(130),
         features: [
           'Everything in Basic',
           'Structured results chapter support',
@@ -743,7 +754,7 @@ export const servicesData: ServiceData[] = [
         deliveryTime: '4-6 days',
       },
       premium: {
-        price: '$220+',
+        price: formatDualCurrencyPrice(220, true),
         features: [
           'Everything in Standard',
           'Advanced interpretation depth',

@@ -24,3 +24,20 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #0a9d4f;
 }
+
+.payment-notice-marquee {
+  display: inline-block;
+  min-width: max-content;
+  padding-left: 100%;
+  animation: payment-notice-marquee 24s linear infinite;
+}
+
+@keyframes payment-notice-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
