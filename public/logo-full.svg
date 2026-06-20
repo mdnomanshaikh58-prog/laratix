@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" role="img" aria-labelledby="title desc">
+  <title id="title">Laratix Lab</title>
+  <desc id="desc">Full Laratix Lab agency logo.</desc>
+  <defs>
+    <linearGradient id="xBlue" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#19b7e6" />
+      <stop offset="1" stop-color="#1562b8" />
+    </linearGradient>
+    <linearGradient id="xPurple" x1="0" x2="1" y1="1" y2="0">
+      <stop offset="0" stop-color="#7a1d83" />
+      <stop offset="1" stop-color="#b63faf" />
+    </linearGradient>
+    <linearGradient id="xOrange" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f36b20" />
+      <stop offset="1" stop-color="#ff9d18" />
+    </linearGradient>
+    <linearGradient id="lGreen" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#00c85a" />
+      <stop offset="1" stop-color="#6bd75d" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <rect width="900" height="180" fill="none" />
+
+  <g transform="translate(18 42)">
+    <text
+      x="0"
+      y="94"
+      fill="#050505"
+      font-family="Arial Black, Arial, Helvetica, sans-serif"
+      font-size="92"
+      font-weight="900"
+      letter-spacing="-3"
+    >Larati</text>
+
+    <g transform="translate(357 8) scale(0.92)" filter="url(#softShadow)">
+      <path d="M0 24 L42 24 L84 82 L42 82 Z" fill="url(#xBlue)" />
+      <path d="M88 78 L150 -18 L118 80 L88 78 Z" fill="url(#xPurple)" />
+      <path d="M49 89 C57 78 60 67 49 52 L84 82 C74 95 64 104 44 110 Z" fill="#ffffff" opacity="0.96" />
+      <path d="M44 110 L88 78 L151 128 L105 128 L75 93 L44 128 Z" fill="url(#xOrange)" />
+      <path d="M0 128 L44 110 L75 93 C60 117 45 128 20 128 Z" fill="url(#xPurple)" />
+      <path d="M42 24 L84 82 L118 80 L71 24 Z" fill="#1757ad" opacity="0.42" />
+    </g>
+
+    <g transform="translate(522 20)" filter="url(#softShadow)">
+      <path d="M58 0 L152 0 L111 100 L17 100 Z" fill="#231b1d" />
+      <path d="M105 70 L163 70 L136 100 L78 100 Z" fill="url(#lGreen)" />
+      <path d="M116 70 L163 70 L136 100 L89 100 Z" fill="#00b44f" opacity="0.45" />
+    </g>
+
+    <text
+      x="705"
+      y="94"
+      fill="#02c75a"
+      font-family="Arial Black, Arial, Helvetica, sans-serif"
+      font-size="92"
+      font-weight="900"
+      letter-spacing="-4"
+    >ab</text>
+  </g>
+</svg>

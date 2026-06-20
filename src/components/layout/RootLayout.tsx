@@ -38,10 +38,12 @@ export default function RootLayout() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center">
-              <span className="text-2xl font-bold text-gray-900">
-                Laratix <span className="text-[#0CB35D]">Lab</span>
-              </span>
+            <Link to="/" className="flex items-center" aria-label="Laratix Lab home">
+              <img
+                src="/logo-full.svg"
+                alt="Laratix Lab"
+                className="h-10 w-auto max-w-[180px] object-contain sm:h-11 sm:max-w-[220px]"
+              />
             </Link>
 
             {/* Desktop Navigation */}

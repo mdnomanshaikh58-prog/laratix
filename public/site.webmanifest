@@ -1,0 +1,16 @@
+{
+  "name": "Laratix Lab",
+  "short_name": "Laratix",
+  "description": "Laratix Lab transforms research, business data, and digital ideas into polished results.",
+  "icons": [
+    {
+      "src": "/lx-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#0CB35D",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
