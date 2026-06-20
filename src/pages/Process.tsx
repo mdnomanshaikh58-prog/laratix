@@ -17,10 +17,10 @@ export default function Process() {
       icon: <MessageCircle className="w-8 h-8" />,
       title: 'Client Inquiry',
       description:
-        'Reach out via our contact form, email, or WhatsApp. Tell us about your project, data, and requirements.',
+        'Reach out via our contact form, email, or WhatsApp. Tell us about your goals, current challenge, and the outcome you want.',
       details: [
         'Describe your project goals',
-        'Share basic data information',
+        'Share your service area or project type',
         'Mention any deadlines',
       ],
     },
@@ -29,11 +29,11 @@ export default function Process() {
       icon: <ClipboardList className="w-8 h-8" />,
       title: 'Requirement Discussion',
       description:
-        'We will have a detailed discussion to understand your exact needs, methodology preferences, and deliverable expectations.',
+        'We will have a detailed discussion to understand your exact needs, audience, priorities, and deliverable expectations.',
       details: [
         'Free consultation call/chat',
-        'Clarify analysis objectives',
-        'Discuss methodology options',
+        'Clarify project objectives',
+        'Discuss the best solution approach',
         'Define deliverable format',
       ],
     },
@@ -53,40 +53,40 @@ export default function Process() {
     {
       number: 4,
       icon: <Database className="w-8 h-8" />,
-      title: 'Data Collection',
+      title: 'Project Materials',
       description:
-        'Once you approve the proposal, share your dataset securely. We will verify data quality and structure.',
+        'Once you approve the proposal, share the materials we need to begin. We review everything and confirm the project structure.',
       details: [
-        'Secure data transfer',
+        'Secure file and content transfer',
         'Confidentiality guaranteed',
-        'Data quality check',
+        'Content, asset, or data review',
         'Preliminary assessment',
       ],
     },
     {
       number: 5,
       icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Analysis',
+      title: 'Execution',
       description:
-        'Our expert team conducts comprehensive analysis using appropriate statistical methods and professional tools.',
+        'Our team works through the agreed plan using the right design, development, analysis, or strategy tools for your project.',
       details: [
-        'Data cleaning & preparation',
-        'Statistical analysis execution',
+        'Project setup and preparation',
+        'Core work execution',
         'Quality control checks',
-        'Result interpretation',
+        'Progress updates',
       ],
     },
     {
       number: 6,
       icon: <Send className="w-8 h-8" />,
-      title: 'Report Delivery',
+      title: 'Draft Delivery',
       description:
-        'Receive a professionally formatted report with detailed results, interpretations, tables, and visualizations.',
+        'Receive the first completed version of your website, report, dashboard, analysis, or requested deliverable for review.',
       details: [
-        'Comprehensive written report',
-        'All statistical outputs',
-        'Tables and visualizations',
-        'Clear interpretation',
+        'Professional draft deliverable',
+        'Relevant files or preview links',
+        'Clear notes and documentation',
+        'Review-ready presentation',
       ],
     },
     {
@@ -170,7 +170,7 @@ export default function Process() {
                           key={i}
                           className="flex items-start gap-2 text-sm text-gray-600"
                         >
-                          <span className="text-[#0CB35D] mt-1">✓</span>
+                          <CheckCircle className="w-4 h-4 text-[#0CB35D] mt-0.5 flex-shrink-0" />
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -198,7 +198,7 @@ export default function Process() {
                 {timeline.basic}
               </p>
               <p className="text-sm text-gray-600">
-                Descriptive stats, correlation, simple analysis
+                Small pages, quick fixes, simple reports
               </p>
             </div>
             <div className="bg-white border-2 border-[#0CB35D] rounded-xl p-6 text-center shadow-lg">
@@ -209,7 +209,7 @@ export default function Process() {
                 {timeline.standard}
               </p>
               <p className="text-sm text-gray-600">
-                Regression, hypothesis testing, reports
+                Websites, dashboards, structured project work
               </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-xl p-6 text-center">
@@ -220,12 +220,12 @@ export default function Process() {
                 {timeline.premium}
               </p>
               <p className="text-sm text-gray-600">
-                SEM, CFA, complex econometrics
+                Custom apps, advanced analysis, full solutions
               </p>
             </div>
           </div>
           <p className="text-center text-sm text-gray-600 mt-6">
-            *Timelines may vary based on data complexity and project scope. Rush
+            *Timelines may vary based on complexity, content readiness, and project scope. Rush
             delivery available on request.
           </p>
         </div>
@@ -244,8 +244,8 @@ export default function Process() {
                 Accuracy Guaranteed
               </h3>
               <p className="text-sm text-gray-600">
-                Every analysis is double-checked for statistical accuracy and
-                methodological soundness before delivery.
+                Every deliverable is reviewed for accuracy, usability, and
+                alignment with your approved project requirements.
               </p>
             </div>
             <div className="bg-gray-50 rounded-xl p-6">
