@@ -40,9 +40,9 @@ export default function RootLayout() {
             {/* Logo */}
             <Link to="/" className="flex items-center" aria-label="Laratix Lab home">
               <img
-                src="/logo-full.svg"
+                src="/logo-full.png"
                 alt="Laratix Lab"
-                className="h-10 w-auto max-w-[180px] object-contain sm:h-11 sm:max-w-[220px]"
+                className="h-20 w-auto max-w-[180px] object-contain sm:h-20 sm:max-w-[220px]"
               />
             </Link>
 
